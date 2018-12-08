@@ -4,7 +4,7 @@
   "description": "",
   "main": "backend.js",
   "scripts": {
-    "start": "backend.js"
+    "test": "backend.js"
   },
   "author": "",
   "license": "ISC",
@@ -12,5 +12,8 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "generate-gitignore": "^0.2.6"
+  },
+  "engines": {
+    "node": "10.x"
   }
 }
