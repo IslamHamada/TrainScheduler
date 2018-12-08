@@ -4,7 +4,7 @@
   "description": "",
   "main": "backend.js",
   "scripts": {
-    "start": ""
+    "start": "node backend.js"
   },
   "author": "",
   "license": "ISC",
