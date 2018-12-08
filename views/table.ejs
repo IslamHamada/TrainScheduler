@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <link rel="stylesheet" href="table.css">
+  <script src='table.js'></script>
+</head>
+<body>
+  <% function format(x){ %>
+    <%  h = String(Math.floor(x/60));%>
+    <%  m = x-h*60;%>
+    <%  m = (m>=10)?String(m):"0"+String(m);%>
+    <%  return h+":"+m;%>
+    <% } %>
+  <h1>Total tardiness: <%=tardiness%> minutes</h1>
+
+
+  <% for(let i=0;i<timelines.length;i++){ %>
+    <h3> Train <%=i+1%></h3>
+    <table style="width:70%">
+      <tr>
+        <td>Stations</td>
+        <% for(let j=0;j<timelines[i].length;j++){ %>
+          <% let x = timelines[i][j];%>
+          <td><%=x[0]%></td>
+        <% } %>
+        <td><%=timelines[i][timelines[i].length-1][1]%></ td>
+      </tr>
+      <tr>
+        <td>Timings</td>
+        <% for(let j=0;j<timelines[i].length;j++){ %>
+          <% let x = timelines[i][j];%>
+          <td><%=format(x[x.length-1])%></td>
+        <% } %>
+        <td><%=format(ends[i])%></td>
+      </tr>
+      </table>
+    <% } %>
+</body>
+</html>
